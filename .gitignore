@@ -1,5 +1,5 @@
-# Claude Code skills (用户自定义技能)
-.claude/skills/
+# Claude Code
+.claude/
 
 # Vercel
 .vercel/
