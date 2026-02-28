@@ -1,0 +1,13 @@
+# Claude Code skills (用户自定义技能)
+.claude/skills/
+
+# Vercel
+.vercel/
+
+# System files
+.DS_Store
+*.log
+
+# Editor
+.vscode/
+.idea/

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OasAI Studio - Open-Source AI Tools & Agent Platforms</title>
+    <meta name="description" content="Building the next generation of AI tools. Open Agent SDK and ClawCycle - lightweight, provider-agnostic solutions for AI developers.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://oasaistudio.vercel.app/">
+    <meta property="og:title" content="OasAI Studio - Open-Source AI Tools & Agent Platforms">
+    <meta property="og:description" content="Building the next generation of AI tools. Open Agent SDK and ClawCycle - lightweight, provider-agnostic solutions for AI developers.">
+    <meta property="og:image" content="https://oasaistudio.vercel.app/logo_square.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://oasaistudio.vercel.app/">
+    <meta property="twitter:title" content="OasAI Studio - Open-Source AI Tools & Agent Platforms">
+    <meta property="twitter:description" content="Building the next generation of AI tools. Open Agent SDK and ClawCycle - lightweight, provider-agnostic solutions for AI developers.">
+    <meta property="twitter:image" content="https://oasaistudio.vercel.app/logo_square.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="./logo_square.jpg">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        oas: {
+                            green: '#84CC16', // 荧光绿/青柠绿
+                            dark: '#09090B',  // 极深碳灰
+                        }
+                    },
+                    backgroundImage: {
+                        'grid-pattern': 'linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px)',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* 自定义滚动条 */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #000;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #84CC16;
+        }
+        
+        /* 鼠标悬浮时的光晕效果 */
+        .glass-card {
+            background: rgba(24, 24, 27, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            border-color: rgba(132, 204, 22, 0.3);
+            box-shadow: 0 0 30px rgba(132, 204, 22, 0.05);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="bg-black text-white font-sans antialiased selection:bg-oas-green selection:text-black overflow-x-hidden">
+
+    <!-- 背景层 -->
+    <div class="fixed inset-0 z-0 pointer-events-none">
+        <!-- 暗网格 -->
+        <div class="absolute inset-0 bg-grid-pattern" style="background-size: 40px 40px;"></div>
+        <!-- 顶部渐变遮罩，让网格自然融入纯黑 -->
+        <div class="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black"></div>
+        <!-- 中心微弱的绿色光晕 -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-oas-green/10 rounded-full blur-[120px] animate-pulse-slow"></div>
+    </div>
+
+    <!-- 主内容区 -->
+    <main class="relative z-10 flex flex-col items-center min-h-screen px-6">
+        
+        <!-- 首屏 Hero Section -->
+        <section class="flex flex-col items-center justify-center min-h-[80vh] w-full max-w-5xl pt-20 text-center">
+            <!-- Logo (使用占位或本地路径) -->
+            <div class="relative mb-8 animate-float">
+                <!-- Logo 背后的高光 -->
+                <div class="absolute inset-0 bg-oas-green/20 blur-2xl rounded-full scale-110"></div>
+                <img src="./logo_square.jpg" alt="OasAI Studio Logo" class="relative w-32 h-32 md:w-40 md:h-40 object-cover rounded-2xl shadow-2xl border border-white/10" onerror="this.src='https://via.placeholder.com/160/000000/84CC16?text=OAS'">
+            </div>
+
+            <!-- 标题 -->
+            <h1 class="font-display text-5xl md:text-7xl font-bold tracking-tight mb-6">
+                OAS AI <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/50">Studio</span>
+            </h1>
+            
+            <!-- Slogan -->
+            <p class="text-zinc-400 text-lg md:text-xl max-w-2xl font-light tracking-wide mb-12">
+                Building the next generation of AI tools. <br class="hidden md:block" />
+                Open-source, lightweight, and provider-agnostic solutions for developers.
+            </p>
+
+            <!-- 向下滚动提示 -->
+            <div class="absolute bottom-10 animate-bounce text-zinc-600">
+                <i data-lucide="chevron-down" class="w-6 h-6"></i>
+            </div>
+        </section>
+
+        <!-- 产品展示区 Products Section -->
+        <section class="w-full max-w-5xl pb-32">
+            <div class="flex items-center justify-between mb-12">
+                <h2 class="font-display text-2xl md:text-3xl font-semibold flex items-center gap-3">
+                    <div class="w-2 h-2 rounded-full bg-oas-green animate-pulse"></div>
+                    Our Products
+                </h2>
+            </div>
+
+            <!-- Bento Grid 布局 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <!-- 产品卡片 1 -->
+                <a href="https://github.com/OasAIStudio/open-agent-sdk" target="_blank" rel="noopener noreferrer" class="glass-card group rounded-3xl p-8 flex flex-col h-full cursor-pointer relative overflow-hidden">
+                    <!-- Hover 时的背景光晕 -->
+                    <div class="absolute -right-20 -top-20 w-40 h-40 bg-oas-green/10 rounded-full blur-3xl group-hover:bg-oas-green/20 transition-colors duration-500"></div>
+
+                    <div class="w-14 h-14 rounded-2xl bg-zinc-800/50 border border-white/5 flex items-center justify-center mb-6 group-hover:border-oas-green/30 transition-colors">
+                        <i data-lucide="code-2" class="w-7 h-7 text-zinc-300 group-hover:text-oas-green transition-colors"></i>
+                    </div>
+
+                    <h3 class="font-display text-2xl font-medium mb-3 text-white group-hover:text-oas-green transition-colors">Open Agent SDK</h3>
+                    <p class="text-zinc-400 leading-relaxed flex-grow">
+                        Open-source alternative to Claude Agent SDK. Build AI agents with TypeScript — lightweight, provider-agnostic, and fully extensible.
+                    </p>
+
+                    <div class="mt-8 flex items-center text-sm font-medium text-zinc-500 group-hover:text-white transition-colors">
+                        Explore on GitHub
+                        <i data-lucide="arrow-right" class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </a>
+
+                <!-- 产品卡片 2 -->
+                <a href="https://molt-market.net" target="_blank" rel="noopener noreferrer" class="glass-card group rounded-3xl p-8 flex flex-col h-full cursor-pointer relative overflow-hidden">
+                    <!-- Hover 时的背景光晕 -->
+                    <div class="absolute -right-20 -top-20 w-40 h-40 bg-oas-green/10 rounded-full blur-3xl group-hover:bg-oas-green/20 transition-colors duration-500"></div>
+
+                    <div class="w-14 h-14 rounded-2xl bg-zinc-800/50 border border-white/5 flex items-center justify-center mb-6 group-hover:border-oas-green/30 transition-colors">
+                        <i data-lucide="recycle" class="w-7 h-7 text-zinc-300 group-hover:text-oas-green transition-colors"></i>
+                    </div>
+
+                    <div class="mb-3">
+                        <h3 class="font-display text-2xl font-medium text-white group-hover:text-oas-green transition-colors">ClawCycle</h3>
+                        <span class="text-sm text-zinc-500 font-medium">MoltMarket</span>
+                    </div>
+                    <p class="text-zinc-400 leading-relaxed flex-grow">
+                        Agent-to-Agent token recycling platform. Turn idle tokens into reusable credits through P2P collaboration — contribute, earn, and save.
+                    </p>
+
+                    <div class="mt-8 flex items-center text-sm font-medium text-zinc-500 group-hover:text-white transition-colors">
+                        Visit Website
+                        <i data-lucide="arrow-right" class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- 极简 Footer -->
+        <footer class="w-full max-w-5xl border-t border-white/5 py-8 flex flex-col md:flex-row items-center justify-between text-sm text-zinc-600">
+            <p>© 2026 OasAI Studio. All rights reserved.</p>
+            <div class="flex gap-6 mt-4 md:mt-0">
+                <a href="https://twitter.com/OasAIStudio" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Twitter</a>
+                <a href="https://github.com/OasAIStudio" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">GitHub</a>
+            </div>
+        </footer>
+
+    </main>
+
+    <!-- 初始化 Lucide Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
