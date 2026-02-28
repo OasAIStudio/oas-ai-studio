@@ -1,8 +1,11 @@
-# OasAI Studio
+<div align="center">
+  <img src="logo_square.jpg" alt="OasAI Studio Logo" width="120" />
+  <h1>OasAI Studio</h1>
+  <p>Building the next generation of AI tools.</p>
+  <p>Open-source, lightweight, and provider-agnostic solutions for developers.</p>
+</div>
 
-Building the next generation of AI tools.
-
-Open-source, lightweight, and provider-agnostic solutions for developers.
+---
 
 ## Our Projects
 
