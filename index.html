@@ -23,10 +23,30 @@
     <!-- Favicon -->
     <link rel="icon" type="image/jpeg" href="./logo_square.jpg">
     
-    <!-- Google Fonts -->
+    <!-- Google Fonts with optimized loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font loading optimization -->
+    <style>
+        /* Smooth font loading transition */
+        body {
+            font-synthesis: none;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Reduce font weights to speed up loading */
+        @font-face {
+            font-family: 'Outfit';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: local('Outfit');
+        }
+    </style>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -36,8 +56,8 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Outfit', 'sans-serif'],
-                        display: ['Outfit', 'sans-serif'],
+                        sans: ['Outfit', 'system-ui', '-apple-system', 'sans-serif'],
+                        display: ['Outfit', 'system-ui', '-apple-system', 'sans-serif'],
                     },
                     colors: {
                         oas: {
