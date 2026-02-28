@@ -14,6 +14,6 @@
 
 ## Links
 
-- **Website**: [oas-ai-studio.vercel.app](https://oas-ai-studio.vercel.app)
+- **Website**: [oasai.studio](https://oasai.studio)
 - **GitHub**: [github.com/OasAIStudio](https://github.com/OasAIStudio)
-- **Twitter**: [@OasAIStudio](https://twitter.com/OasAIStudio)
+- **X (Twitter)**: [@OasAIStudio](https://x.com/oasaistudio)
