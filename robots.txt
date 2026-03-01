@@ -1,0 +1,13 @@
+# robots.txt for oasai.studio
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://oasai.studio/sitemap.xml
+
+# Common crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
