@@ -198,7 +198,7 @@
             </p>
 
             <!-- 向下滚动提示 -->
-            <div class="absolute bottom-10 animate-bounce text-zinc-600">
+            <div id="scroll-indicator" class="fixed bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-zinc-600 transition-opacity duration-300 z-20">
                 <i data-lucide="chevron-down" class="w-6 h-6"></i>
             </div>
         </section>
@@ -275,6 +275,20 @@
     <!-- 初始化 Lucide Icons -->
     <script>
         lucide.createIcons();
+
+        // 滚动后隐藏向下滚动提示
+        const scrollIndicator = document.getElementById('scroll-indicator');
+        let hasScrolled = false;
+
+        window.addEventListener('scroll', () => {
+            if (!hasScrolled && window.scrollY > 100) {
+                hasScrolled = true;
+                scrollIndicator.style.opacity = '0';
+                setTimeout(() => {
+                    scrollIndicator.style.display = 'none';
+                }, 300);
+            }
+        });
     </script>
 </body>
 </html>
